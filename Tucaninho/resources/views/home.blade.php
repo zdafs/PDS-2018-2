@@ -33,6 +33,37 @@
       $("#closeBtn").click(function(){
               $(".modal").hide();
             });
+
+      $("#cadastro").click(function(){
+            $("#formLogin").hide();
+            $("#esqSenha").hide();
+            $("#cadastro").hide();
+            $("#formCadastro").show();
+            $("#login").show();
+            $("#facebookIcon").css("padding-left", "0px");
+      });
+
+      $("#login").click(function(){
+            $("#formLogin").show();
+            $("#esqSenha").show();
+            $("#cadastro").show();
+            $("#facebookIcon").show();
+            $("#formCadastro").hide();
+            $("#formSenha").hide();
+            $("#login").hide();
+            $("#facebookIcon").css("padding-left", "380px");
+      });
+
+      $("#esqSenha").click(function(){
+            $("#formLogin").hide();
+            $("#esqSenha").hide();
+            $("#cadastro").hide();
+            $("#facebookIcon").hide();
+            $("#formSenha").show();
+            $("#login").show();
+            $("#facebookIcon").css("padding-left", "0px");
+      });
+
     }
     </script>
 
