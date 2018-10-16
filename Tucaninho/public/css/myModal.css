@@ -1,0 +1,107 @@
+.modal {
+   display: none; /* Hidden by default */
+   position: fixed; /* Stay in place */
+   z-index: 1; /* Sit on top */
+   left: 0;
+   top: 0;
+   width: 100%; /* Full width */
+   height: 100%; /* Full height */
+   background-color: rgb(0,0,0); /* Fallback color */
+   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+#id_logindiv {
+  background-color: #343131;
+  margin: 10% auto; /* 15% from the top and centered */
+  padding-top: 30px;
+  padding-right: 30px;
+  padding-bottom: 70px;
+  padding-left: 30px;
+  border: 2px solid gold;
+  width: 35%; /* Could be more or less, depending on screen size */
+  font-size: 20px;
+  color: white;
+  border-radius: 10px;
+  align-content: center;
+}
+
+#closeBtnDiv {
+  float: right;
+}
+
+#formLoginDiv {
+  align-content: center;
+}
+
+#esqSenha {
+  color: deepskyblue;
+  float: left;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: white;
+  border-radius: 10px;
+}
+
+#esqSenha:hover,
+#esqSenha:focus {
+  color: blue;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: skyblue;
+}
+
+#entrar {
+  color: limegreen;
+  align-content: center;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: white;
+  border-radius: 10px;
+}
+
+#entrar:hover,
+#entrar:focus {
+  color: green;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: limegreen;
+}
+
+#closeBtn {
+  color: black;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  background-color: darkgray;
+  border-radius: 10px;
+}
+
+#closeBtn:hover,
+#closeBtn:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: red;
+}
+
+#cadastro {
+  color: goldenrod;
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: white;
+  border-radius: 10px;
+}
+
+#cadastro:hover,
+#cadastro:focus {
+  color: gold;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: goldenrod;
+}
+
+#facebookIcon {
+  padding-left: 390px;
+  padding-bottom: 70px;
+}

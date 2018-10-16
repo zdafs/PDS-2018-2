@@ -23,6 +23,19 @@
     <!-- Custom styles for this template -->
     <link href="{{asset('home/css/agency.min.css')}}" rel="stylesheet">
 
+    <!-- Login popup style -->
+    <link href="{{asset('css/myModal.css')}}" rel="stylesheet">
+
+    <script>
+    function modalFunction(){
+      $(".modal").css('display', 'block');
+
+      $("#closeBtn").click(function(){
+              $(".modal").hide();
+            });
+    }
+    </script>
+
   </head>
 
   <body id="page-top">
@@ -47,7 +60,7 @@
               <a class="nav-link js-scroll-trigger" href="#about">Sobre nós</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Login</a>
+              <a href="#" class="nav-link js-scroll-trigger" id="loginBtn" onclick="modalFunction()">Login</a>
             </li>
           </ul>
         </div>
@@ -223,6 +236,8 @@
         </div>
       </div>
     </footer>
+
+    @include('components.modal')
 
     <!-- Bootstrap core JavaScript -->
     <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
