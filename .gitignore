@@ -1,0 +1,14 @@
+Tucaninho/node_modules
+Tucaninho/public/hot
+Tucaninho/public/storage
+Tucaninho/storage/*.key
+Tucaninho/vendor
+Tucaninho/.idea
+Tucaninho/.vscode
+Tucaninho/.vagrant
+Tucaninho/Homestead.json
+Tucaninho/Homestead.yaml
+Tucaninho/npm-debug.log
+Tucaninho/yarn-error.log
+Tucaninho/.env
+Tucaninho/.phpunit.result.cache
