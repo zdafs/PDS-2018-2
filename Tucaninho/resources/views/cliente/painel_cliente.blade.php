@@ -15,6 +15,9 @@
   <li>
       <a href="/cliente/config">Configurações</a>
   </li>
+  <li>
+      <a href="/">Logout</a>
+  </li>
 @endsection
 
 @section('content')
