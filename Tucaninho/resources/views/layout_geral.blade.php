@@ -51,6 +51,10 @@
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
+    $(".clickable-row").css('cursor', 'pointer');
+    $(".clickable-row").click(function() {
+        window.location = $(this).data("href");
+    });
     </script>
 
 </body>

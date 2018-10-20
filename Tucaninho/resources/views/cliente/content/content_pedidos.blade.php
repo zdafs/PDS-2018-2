@@ -14,7 +14,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr class="clickable-row" data-href="/cliente/pedidos/detalhes">
             <th scope="row">01/01/2001</th>
             <td>2000.00</td>
             <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate...</td>

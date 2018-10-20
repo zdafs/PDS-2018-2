@@ -28,3 +28,7 @@ Route::get('/cliente/conversas', function () {
 Route::get('/cliente/config', function () {
     return view('placeholder');
 });
+
+Route::get('/cliente/pedidos/detalhes', function(){
+    return view('cliente.content.content_detalhes_pedidos');
+});
