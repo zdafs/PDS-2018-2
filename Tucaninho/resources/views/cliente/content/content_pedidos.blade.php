@@ -1,5 +1,17 @@
 @extends('cliente.painel_cliente')
 
+@section('styles')
+@endsection
+
+@section('scripts')
+  <script>
+    $(".clickable-row").css('cursor', 'pointer');
+    $(".clickable-row").click(function() {
+        window.location = $(this).data("href");
+    });
+  </script>
+@endsection
+
 @section('content')
   <div class="container-fluid">
       @include('components.painel_navbar', ['p'=>''])

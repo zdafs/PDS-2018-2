@@ -18,6 +18,7 @@
     <link href="{{asset('painel/css/1-col-portfolio.css')}}" rel="stylesheet">
     <link href="{{asset('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
 
+    @yield('styles')
 </head>
 
 <body>
@@ -51,11 +52,8 @@
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
-    $(".clickable-row").css('cursor', 'pointer');
-    $(".clickable-row").click(function() {
-        window.location = $(this).data("href");
-    });
     </script>
+    @yield('scripts')
 
 </body>
 

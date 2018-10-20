@@ -1,5 +1,13 @@
 @extends('layout_geral')
 
+@section('styles')
+  @yield('styles')
+@endsection
+
+@section('scripts')
+  @yield('scripts')
+@endsection
+
 @section('sidebar')
   <li class="sidebar-brand">
       <a href="/cliente/pedidos">
