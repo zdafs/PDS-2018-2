@@ -54,10 +54,10 @@
   </form>
   <hr>
   <div class="text-center">
-    <span class="fa-stack fa-lg" id="facebookIcon">
+    <a href="#" class="fa-stack fa-lg" id="facebookIcon">
         <i class="far fa-circle fa-stack-2x""></i>
         <i class="fab fa-facebook-f fa-stack-1x fa-inverse""></i>
-    </span>
+    </a>
     <button type="button" class="btn btn-default" id="login">Login</button>
   </div>
   <br>

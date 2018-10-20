@@ -31,8 +31,17 @@
       $(".modal").css('display', 'block');
 
       $("#closeBtn").click(function(){
-              $(".modal").hide();
-            });
+            $(".modal").hide();
+            $("#formLogin").show();
+            $("#esqSenha").show();
+            $("#cadastro").show();
+            $("#facebookIcon").show();
+            $("#formCadastro").hide();
+            $("#formSenha").hide();
+            $("#login").hide();
+            $("#facebookIcon").css("padding-left", "380px");
+
+      });
 
       $("#cadastro").click(function(){
             $("#formLogin").hide();
@@ -103,7 +112,7 @@
       <div class="container">
         <div class="intro-text">
           <div class="intro-lead-in">Bem vindo, viajante!</div>
-          <div class="intro-heading text-uppercase">Aqui você economiza na sua passagem</div>
+          <div class="intro-heading text-uppercase">Aqui você economiza na sua viagem</div>
           <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Me mostre como</a>
         </div>
       </div>
@@ -125,7 +134,7 @@
               <i class="fas fa-address-card fa-stack-1x fa-inverse"></i>
             </span>
             <h4 class="service-heading">Cadastre-se</h4>
-            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+            <p class="text-muted">Crie uma conta no nosso sistema para começar.</p>
           </div>
           <div class="col-md-4">
             <span class="fa-stack fa-4x">
@@ -133,7 +142,7 @@
               <i class="fas fa-edit fa-stack-1x fa-inverse"></i>
             </span>
             <h4 class="service-heading">Faça um pedido</h4>
-            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+            <p class="text-muted">Coloque a oferta que você possui atualmente, com as informações que você deseja para sua viagem.</p>
           </div>
           <div class="col-md-4">
             <span class="fa-stack fa-4x">
@@ -141,7 +150,7 @@
               <i class="fas fa-handshake fa-stack-1x fa-inverse"></i>
             </span>
             <h4 class="service-heading">Feche negócio</h4>
-            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+            <p class="text-muted">Receba ofertas para diminuir o preço de sua viagem, e escolha a que for de sua preferencia.</p>
           </div>
         </div>
       </div>
