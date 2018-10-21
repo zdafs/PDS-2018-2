@@ -32,3 +32,6 @@ Route::get('/cliente/config', function () {
 Route::get('/cliente/pedidos/detalhes', function(){
     return view('cliente.content.content_detalhes_pedidos');
 });
+
+
+Route::post('/login', 'ClienteAuth\ClienteLoginController@authenticate');

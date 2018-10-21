@@ -3,7 +3,8 @@
   <button type="button" class="close" id="closeBtn" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
-  <form class="form-horizontal" id="formLogin">
+  <form class="form-horizontal" id="formLogin" action="{{action('ClienteAuth\ClienteLoginController@authenticate')}}" method="post">
+    @csrf
     <div class="form-group">
       <label class="control-label col-xs-2 col-sm-2" for="emailLogin"></label>
       <div class="col-xs-10 col-sm-10 form-control-static">
