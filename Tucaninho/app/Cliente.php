@@ -3,8 +3,9 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Cliente extends Model
+class Cliente extends Authenticatable
 {
     /**
    * The database table used by the model.
@@ -12,6 +13,15 @@ class Cliente extends Model
    * @var string
    */
   protected $table = 'cliente';
+
+  public $timestamps = false;
+
+  protected $primaryKey = 'email_cliente';
+
+  public function getAuthPassword()
+{
+    return $this->senha_cliente;
+}
 
   /**
    * The attributes that are mass assignable.

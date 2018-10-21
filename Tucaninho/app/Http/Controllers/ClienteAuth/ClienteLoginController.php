@@ -5,16 +5,17 @@ namespace App\Http\Controllers\ClienteAuth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class ClienteLoginController extends Controller
 {
     public function authenticate(Request $request){
-      $credentials = $request->only('email', 'pwd');
+      $credentials = ['email_cliente' => $request->email, 'password' => $request->pwd];
 
-      if(Auth::guard('cliente')->attempt(['email_cliente' => $credentials['email'], 'senha_cliente' => $credentials['pwd']])){
-        return Auth::guard('cliente')->user()->nome_cliente.' logado com sucesso';
+      if(Auth::guard('cliente')->attempt($credentials)) {
+        return redirect('/cliente/pedidos');
       }
 
-      return 'Usuário não cadastrado';
+      return redirect('/');
     }
 }

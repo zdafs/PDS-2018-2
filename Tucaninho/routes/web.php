@@ -35,3 +35,5 @@ Route::get('/cliente/pedidos/detalhes', function(){
 
 
 Route::post('/login', 'ClienteAuth\ClienteLoginController@authenticate');
+
+Route::post('/register', 'ClienteAuth\ClienteRegisterController@create');

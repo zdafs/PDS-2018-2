@@ -21,7 +21,8 @@
       <button type="submit" class="btn btn-default" id="entrar">Entrar</button>
     </div>
   </form>
-  <form class="form-horizontal" id="formCadastro">
+  <form class="form-horizontal" id="formCadastro" method="post" action="{{action('ClienteAuth\ClienteRegisterController@create')}}">
+      @csrf
       <label class="control-label col-xs-2 col-sm-2" for="email"></label>
       <div class="col-xs-10 col-sm-10 form-control-static">
         <input type="email" name="email" class="form-control" id="email" placeholder="Insira o email aqui" maxlength="100" required>
