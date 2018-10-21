@@ -26,24 +26,14 @@
           </tr>
         </thead>
         <tbody>
-          <tr class="clickable-row" data-href="/cliente/pedidos/detalhes">
-            <th scope="row">01/01/2001</th>
-            <td>2000.00</td>
-            <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate...</td>
-            <td><a href="#">Deal</a></td>
-          </tr>
-          <tr>
-            <th scope="row">02/03/2004</th>
-            <td>200.00</td>
-            <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate...</td>
-            <td><a href="#">Deal</a></td>
-          </tr>
-          <tr>
-            <th scope="row">01/01/2006</th>
-            <td>12000.00</td>
-            <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate...</td>
-            <td><a href="#">Deal</a></td>
-          </tr>
+          @foreach ($pedidos as $pedido)
+            <tr class="clickable-row" data-href="/cliente/pedidos/detalhes">
+              <th scope="row">{{$pedido->pedido_id}}</th>
+              <td>{{$pedido->preco}}</td>
+              <td>{{substr($pedido->descricao, 0, 30).'...'}}</td>
+              <td><a href="{{$pedido->url}}">Deal</a></td>
+            </tr>
+          @endforeach
         </tbody>
       </table>
   </div>

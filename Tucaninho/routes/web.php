@@ -17,9 +17,7 @@ Route::get('/', function () {
 
 Route::redirect('/cliente', '/cliente/pedidos');
 
-Route::get('/cliente/pedidos', function () {
-    return view('cliente.content.content_pedidos');
-});
+Route::get('/cliente/pedidos', 'PedidosController@listaPedidos');
 
 Route::get('/cliente/conversas', function () {
     return view('placeholder');

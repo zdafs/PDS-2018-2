@@ -18,6 +18,10 @@ class Cliente extends Authenticatable
 
   protected $primaryKey = 'email_cliente';
 
+  public $incrementing = false;
+
+  protected $keyType = 'string';
+
   public function getAuthPassword()
 {
     return $this->senha_cliente;
