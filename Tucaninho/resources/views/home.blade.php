@@ -27,10 +27,21 @@
     <link href="{{asset('css/myModal.css')}}" rel="stylesheet">
 
     <script>
-    function modalFunction(){
-      $("#exampleModalLong").modal('show');
+    $(document).ready(function(){
+        $("#formCadastro").submit(function compSenha(event){
+            if($("#pwdCadastro").val() != $("#pwd2").val()){
+                $("#pwdCadastro").val("");
+                $("#pwd2").val("");
+                alert("As senhas são diferentes!");
+                event.preventDefault();
+            }
+        });
+    });
 
-      $("#closeBtn").click(function(){
+    function modalFunction(){
+        $("#exampleModalLong").modal('show');
+
+        $("#closeBtn").click(function(){
             $(".modal").hide();
             $("#formLogin").show();
             $("#esqSenha").show();
@@ -40,17 +51,17 @@
             $("#formSenha").hide();
             $("#login").hide();
 
-      });
+        });
 
-      $("#cadastro").click(function(){
+        $("#cadastro").click(function(){
             $("#formLogin").hide();
             $("#esqSenha").hide();
             $("#cadastro").hide();
             $("#formCadastro").show();
             $("#login").show();
-      });
+        });
 
-      $("#login").click(function(){
+        $("#login").click(function(){
             $("#formLogin").show();
             $("#esqSenha").show();
             $("#cadastro").show();
@@ -58,16 +69,16 @@
             $("#formCadastro").hide();
             $("#formSenha").hide();
             $("#login").hide();
-      });
+        });
 
-      $("#esqSenha").click(function(){
+        $("#esqSenha").click(function(){
             $("#formLogin").hide();
             $("#esqSenha").hide();
             $("#cadastro").hide();
             $("#facebookIcon").hide();
             $("#formSenha").show();
             $("#login").show();
-      });
+        });
 
     }
     </script>

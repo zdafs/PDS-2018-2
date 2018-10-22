@@ -7,10 +7,6 @@
     color: gold;
 }
 
-#closeBtnDiv {
-  float: right;
-}
-
 #formLoginDiv {
   align-content: center;
 }
@@ -47,23 +43,6 @@
   text-decoration: none;
   cursor: pointer;
   background-color: limegreen;
-}
-
-#closeBtn {
-  color: black;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  background-color: darkgray;
-  border-radius: 10px;
-}
-
-#closeBtn:hover,
-#closeBtn:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-  background-color: red;
 }
 
 #cadastro {
