@@ -17,6 +17,7 @@ create table Pedidos (
 	descricao text not null,
 	qnt_adultos smallint not null,
 	qnt_criancas smallint not null,
+	preco numeric(8, 2) not null,
 	qnt_bebes smallint not null,
 	tipo_viagem smallint not null,
 	tipo_passagem smallint not null,
