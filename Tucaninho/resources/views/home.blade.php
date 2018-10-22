@@ -28,7 +28,7 @@
 
     <script>
     function modalFunction(){
-      $(".modal").css('display', 'block');
+      $("#exampleModalLong").modal('show');
 
       $("#closeBtn").click(function(){
             $(".modal").hide();
@@ -39,7 +39,6 @@
             $("#formCadastro").hide();
             $("#formSenha").hide();
             $("#login").hide();
-            $("#facebookIcon").css("padding-left", "380px");
 
       });
 
@@ -49,7 +48,6 @@
             $("#cadastro").hide();
             $("#formCadastro").show();
             $("#login").show();
-            $("#facebookIcon").css("padding-left", "0px");
       });
 
       $("#login").click(function(){
@@ -60,7 +58,6 @@
             $("#formCadastro").hide();
             $("#formSenha").hide();
             $("#login").hide();
-            $("#facebookIcon").css("padding-left", "380px");
       });
 
       $("#esqSenha").click(function(){
@@ -70,7 +67,6 @@
             $("#facebookIcon").hide();
             $("#formSenha").show();
             $("#login").show();
-            $("#facebookIcon").css("padding-left", "0px");
       });
 
     }
