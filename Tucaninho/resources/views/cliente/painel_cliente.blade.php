@@ -15,7 +15,7 @@
       </a>
   </li>
   <li>
-      <a href="/cliente/pedidos">Pedidos</a>
+      <a href="{{action('PedidosController@listaPedidos')}}">Pedidos</a>
   </li>
   <li>
       <a href="/cliente/conversas">Conversas</a>
@@ -24,7 +24,7 @@
       <a href="/cliente/config">Configurações</a>
   </li>
   <li>
-      <a href="/">Logout</a>
+      <a href="{{action('ClienteController@logout')}}">Logout</a>
   </li>
 @endsection
 

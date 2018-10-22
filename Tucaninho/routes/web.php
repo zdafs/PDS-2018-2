@@ -15,22 +15,23 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::redirect('/cliente', '/cliente/pedidos');
+Route::middleware('clienteAuth')->group(function(){
+  Route::get('/cliente/pedidos', 'PedidosController@listaPedidos');
 
-Route::get('/cliente/pedidos', 'PedidosController@listaPedidos');
+  Route::get('/cliente/logout', 'ClienteController@logout');
 
-Route::get('/cliente/conversas', function () {
-    return view('placeholder');
+  Route::get('/cliente/conversas', function () {
+      return view('placeholder');
+  });
+
+  Route::get('/cliente/config', function () {
+      return view('placeholder');
+  });
+
+  Route::get('/cliente/pedidos/detalhes', function(){
+      return view('cliente.content.content_detalhes_pedidos');
+  });
 });
-
-Route::get('/cliente/config', function () {
-    return view('placeholder');
-});
-
-Route::get('/cliente/pedidos/detalhes', function(){
-    return view('cliente.content.content_detalhes_pedidos');
-});
-
 
 Route::post('/login', 'ClienteAuth\ClienteLoginController@authenticate');
 

@@ -22,10 +22,9 @@ class Cliente extends Authenticatable
 
   protected $keyType = 'string';
 
-  public function getAuthPassword()
-{
-    return $this->senha_cliente;
-}
+  public function getAuthPassword(){
+      return $this->senha_cliente;
+  }
 
   /**
    * The attributes that are mass assignable.
@@ -40,4 +39,14 @@ class Cliente extends Authenticatable
    * @var array
    */
   protected $hidden = ['senha_cliente'];
+
+  public function getRememberToken()
+  {
+      return null;
+  }
+
+  public function setRememberToken($value)
+  {
+       // do nothing
+  }
 }
