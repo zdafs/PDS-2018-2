@@ -26,6 +26,11 @@
     <!-- Login popup style -->
     <link href="{{asset('css/myModal.css')}}" rel="stylesheet">
 
+    <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="{{asset('vendor/jquery-easing/jquery.easing.min.js')}}"></script>
+
     <script>
     $(document).ready(function(){
         $("#formCadastro").submit(function compSenha(event){
@@ -287,11 +292,7 @@
     @include('components.modal')
 
     <!-- Bootstrap core JavaScript -->
-    <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
     <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="{{asset('vendor/jquery-easing/jquery.easing.min.js')}}"></script>
 
     <!-- Contact form JavaScript -->
     <script src="{{asset('home/js/jqBootstrapValidation.js')}}"></script>
