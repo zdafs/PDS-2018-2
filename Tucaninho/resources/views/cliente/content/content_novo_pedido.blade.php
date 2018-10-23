@@ -28,8 +28,8 @@
 
                       <div class="card-body">
               <!-- We're going to place the form here in the next step -->
-                          <form id="contact-form" method="post" action="contact.php" role="form">
-
+                          <form id="contact-form" method="post" action="{{action('PedidosController@cadastraPedido')}}" role="form">
+                              @csrf
                               <div class="messages"></div>
 
                               <div class="controls">
@@ -89,7 +89,7 @@
                                   <div class="row">
                                       <div class="col-md-2">
                                           <div class="form-group">
-                                              <select id="qnt_adultos" name="qun_adultos" class="form-control" required="required" data-error="Especifique o número de adultos.">
+                                              <select id="qnt_adultos" name="qnt_adultos" class="form-control" required="required" data-error="Especifique o número de adultos.">
                                                   <option value="1">1 adulto</option>
                                                   <option value="2">2 adultos</option>
                                                   <option value="3">3 adultos</option>

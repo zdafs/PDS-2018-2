@@ -14,7 +14,7 @@
 
 @section('content')
   <div class="container-fluid">
-      @include('components.painel_navbar', ['p'=>''])
+      @include('components.painel_navbar')
       <!-- Project One -->
       <table class="table table-hover">
         <thead>

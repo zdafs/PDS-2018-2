@@ -5,9 +5,5 @@
         <i class="fas fa-align-justify"></i>
       </span>
     </a>
-    <!-- Pagination -->
-    @if(isset($p))
-      @include('components.pagination')
-    @endif
   </div>
 </nav>

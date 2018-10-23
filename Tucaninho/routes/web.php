@@ -35,6 +35,8 @@ Route::middleware('clienteAuth')->group(function(){
   Route::get('/cliente/novo', function(){
       return view('cliente.content.content_novo_pedido');
   });
+
+  Route::post('/cliente/novo', 'PedidosController@cadastraPedido');
 });
 
 Route::post('/login', 'ClienteAuth\ClienteLoginController@authenticate');
