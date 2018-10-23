@@ -31,6 +31,10 @@ Route::middleware('clienteAuth')->group(function(){
   Route::get('/cliente/pedidos/detalhes', function(){
       return view('cliente.content.content_detalhes_pedidos');
   });
+
+  Route::get('/cliente/novo', function(){
+      return view('cliente.content.content_novo_pedido');
+  });
 });
 
 Route::post('/login', 'ClienteAuth\ClienteLoginController@authenticate');
