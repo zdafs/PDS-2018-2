@@ -7,13 +7,8 @@
     color: gold;
 }
 
-#formLoginDiv {
-  align-content: center;
-}
-
 #esqSenha {
   color: deepskyblue;
-  float: left;
   font-size: 20px;
   font-weight: bold;
   background-color: white;
@@ -47,7 +42,6 @@
 
 #cadastro {
   color: goldenrod;
-  float: right;
   font-size: 20px;
   font-weight: bold;
   background-color: white;
