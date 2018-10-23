@@ -2,14 +2,17 @@
 
 @section('styles')
   <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-  <link href='custom.css' rel='stylesheet' type='text/css'>
 @endsection
 
 
 @section('scripts')
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js" integrity="sha256-dHf/YjH1A4tewEsKUSmNnV05DDbfGN3g7NMq86xgGh8=" crossorigin="anonymous"></script>
-  <script src="contact.js"></script>
+  <script>
+        function somaQnt(){
+            $("#disabledInput").val(parseInt($("#qnt_adultos option:selected").val()) + parseInt($("#qnt_criancas option:selected").val()) + parseInt($("#qnt_bebes option:selected").val()));
+        }
+  </script>
 @endsection
 
 @section('content')
@@ -89,7 +92,7 @@
                                   <div class="row">
                                       <div class="col-md-2">
                                           <div class="form-group">
-                                              <select id="qnt_adultos" name="qnt_adultos" class="form-control" required="required" data-error="Especifique o número de adultos.">
+                                              <select id="qnt_adultos" name="qnt_adultos" class="form-control" required="required" data-error="Especifique o número de adultos." onchange="somaQnt();">
                                                   <option value="1">1 adulto</option>
                                                   <option value="2">2 adultos</option>
                                                   <option value="3">3 adultos</option>
@@ -107,7 +110,7 @@
                                      <div class="col-md-1"> <h2>+</h2> </div>
                                       <div class="col-md-2">
                                           <div class="form-group">
-                                              <select id="qnt_criancas" name="qnt_criancas" class="form-control" required="required" data-error="Especifique o número de crianças.">
+                                              <select id="qnt_criancas" name="qnt_criancas" class="form-control" required="required" data-error="Especifique o número de crianças." onchange="somaQnt();">
                                                   <option value="0">0 crianças</option>
                                                   <option value="1">1 criança</option>
                                                   <option value="2">2 crianças</option>
@@ -119,7 +122,7 @@
                                       <div class="col-md-1"> <h2>+</h2> </div>
                                       <div class="col-md-2">
                                           <div class="form-group">
-                                              <select id="qnt_bebes" name="qnt_bebes" class="form-control" required="required" data-error="Especifique o número de bebês.">
+                                              <select id="qnt_bebes" name="qnt_bebes" class="form-control" required="required" data-error="Especifique o número de bebês." onchange="somaQnt();">
                                                   <option value="0">0 bebês</option>
                                                   <option value="1">1 bebê</option>
                                                   <option value="2">2 bebês</option>
@@ -131,7 +134,7 @@
                                       <div class="col-md-1"> <h2>=</h2> </div>
                                       <div class="col-md-1">
                                           <div class="form-group">
-                                              <input class="form-control" value="" id="disabledInput" type="text" disabled>
+                                              <input class="form-control" value="1" id="disabledInput" type="text" disabled>
                                           </div>
                                       </div>
                                       <div class="col-md-2"> <h5>Passageiros</h5>. </div>
