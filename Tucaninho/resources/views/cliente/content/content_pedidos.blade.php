@@ -27,8 +27,8 @@
         </thead>
         <tbody>
           @foreach ($pedidos as $pedido)
-            <tr class="clickable-row" data-href="/cliente/pedidos/detalhes">
-              <th scope="row">{{$pedido->pedido_id}}</th>
+            <tr class="clickable-row" data-href="{{action('PedidosController@detalhesPedido', [$pedido->pedido_id])}}">
+              <th scope="row">{{\Carbon\Carbon::parse($pedido->pedido_id)->format('d/m/Y - H:i')}}</th>
               <td>{{$pedido->preco}}</td>
               <td>{{substr($pedido->descricao, 0, 30).'...'}}</td>
               <td><a href="{{$pedido->url}}">Deal</a></td>

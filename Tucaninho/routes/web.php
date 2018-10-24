@@ -28,9 +28,7 @@ Route::middleware('clienteAuth')->group(function(){
       return view('placeholder');
   });
 
-  Route::get('/cliente/pedidos/detalhes', function(){
-      return view('cliente.content.content_detalhes_pedidos');
-  });
+  Route::get('/cliente/pedidos/detalhes/{id}', 'PedidosController@detalhesPedido');
 
   Route::get('/cliente/novo', function(){
       return view('cliente.content.content_novo_pedido');
