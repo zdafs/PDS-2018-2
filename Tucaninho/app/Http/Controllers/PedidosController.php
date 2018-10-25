@@ -26,7 +26,7 @@ class PedidosController extends Controller {
 
     public function detalhesPedido($id){
         $user = Auth::guard('cliente')->user();
-        $match = ['pedido_id' => $id, 'email_cliente' => $user->email_cliente];
+        $match = ['pedido_id' => decrypt($id), 'email_cliente' => $user->email_cliente];
         $pedido = Pedido::where($match)->get();
 
         return view('cliente.content.content_detalhes_pedidos')->with('pedido', $pedido[0]);

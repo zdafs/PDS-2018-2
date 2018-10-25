@@ -31,6 +31,10 @@
 
 @extends('cliente.painel_cliente')
 
+@section('title')
+    Detalhes do Pedido
+@endsection
+
 @section('content')
   <!-- Page Content -->
   <div class="container-fluid">
@@ -42,7 +46,7 @@
 
       <div class="col-md-12">
 
-        <div class="card mt-4">
+        <div class="card">
           <div class="card-body">
             <h3 class="card-title">Detalhes do Pedido</h3>
             <h4>R${{ $pedido->preco }}</h4>
@@ -90,8 +94,8 @@
             <button type="button" class="btn btn-warning">Aceitar Oferta</button>
             <hr>
             <a href="#" class="btn btn-success">Fazer uma oferta</a> -->
-          </div>
-        </div>
+          <!--</div>-->
+        <!--</div>-->
         <!-- /.card -->
 
       </div>

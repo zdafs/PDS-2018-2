@@ -1,5 +1,9 @@
 @extends('cliente.painel_cliente')
 
+@section('title')
+    Novo Pedido
+@endsection
+
 @section('styles')
   <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 @endsection

@@ -1,5 +1,9 @@
 @extends('layout_geral')
 
+@section('title')
+    Cliente - @yield('title')
+@endsection
+
 @section('styles')
   @yield('styles')
 @endsection
@@ -10,8 +14,8 @@
 
 @section('sidebar')
   <li class="sidebar-brand">
-      <a href="/cliente/pedidos">
-          Painel Cliente
+      <a style="{pointer-events: none;}">
+          Bem Vindo, {{\Auth::guard('cliente')->user()->nome_cliente}}
       </a>
   </li>
   <li>
@@ -20,12 +24,12 @@
   <li>
       <a href="/cliente/novo">Novo Pedido</a>
   </li>
-  <li>
+  <!--<li>
       <a href="/cliente/conversas">Conversas</a>
   </li>
   <li>
       <a href="/cliente/config">Configurações</a>
-  </li>
+  </li>-->
   <li>
       <a href="{{action('ClienteController@logout')}}">Logout</a>
   </li>

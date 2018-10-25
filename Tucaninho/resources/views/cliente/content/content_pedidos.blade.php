@@ -1,5 +1,9 @@
 @extends('cliente.painel_cliente')
 
+@section('title')
+    Pedidos
+@endsection
+
 @section('styles')
 @endsection
 
@@ -27,10 +31,14 @@
         </thead>
         <tbody>
           @foreach ($pedidos as $pedido)
-            <tr class="clickable-row" data-href="{{action('PedidosController@detalhesPedido', [$pedido->pedido_id])}}">
+            <tr class="clickable-row" data-href="{{action('PedidosController@detalhesPedido', [encrypt($pedido->pedido_id)])}}">
               <th scope="row">{{\Carbon\Carbon::parse($pedido->pedido_id)->format('d/m/Y - H:i')}}</th>
               <td>{{$pedido->preco}}</td>
-              <td>{{substr($pedido->descricao, 0, 30).'...'}}</td>
+              @if(strlen($pedido->descricao)<60)
+                <td>{{$pedido->descricao}}</td>
+              @else
+                <td>{{substr($pedido->descricao, 0, 57).'...'}}</td>
+              @endif
               <td><a href="{{$pedido->url}}">Deal</a></td>
             </tr>
           @endforeach
