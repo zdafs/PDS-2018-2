@@ -1,7 +1,7 @@
 @extends('layout_geral')
 
 @section('title')
-    Cliente - @yield('title')
+    @yield('title')
 @endsection
 
 @section('styles')
