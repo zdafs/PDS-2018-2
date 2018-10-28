@@ -15,14 +15,11 @@
 @section('sidebar')
   <li class="sidebar-brand">
       <a style="{pointer-events: none;}">
-          Bem Vindo, {{\Auth::guard('cliente')->user()->nome_cliente}}
+          Bem Vindo, Blablabla
       </a>
   </li>
   <li>
-      <a href="{{action('PedidosController@listaPedidosCliente')}}">Pedidos</a>
-  </li>
-  <li>
-      <a href="/cliente/novo">Novo Pedido</a>
+      <a href="{{action('PedidosController@listaPedidosAgente')}}">Pedidos</a>
   </li>
   <!--<li>
       <a href="/cliente/conversas">Conversas</a>
@@ -31,7 +28,7 @@
       <a href="/cliente/config">Configurações</a>
   </li>-->
   <li>
-      <a href="{{action('ClienteController@logout')}}">Logout</a>
+      <a href="/">Logout</a>
   </li>
 @endsection
 

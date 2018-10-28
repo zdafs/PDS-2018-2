@@ -1,4 +1,4 @@
-@extends('cliente.painel_cliente')
+@extends('agente.painel_agente')
 
 @section('title')
     Pedidos
@@ -24,22 +24,22 @@
         <thead>
           <tr>
             <th scope="col">Data</th>
+            <th scope="col">Cliente</th>
             <th scope="col">Preço</th>
             <th scope="col">Descrição</th>
-            <th scope="col">Link</th>
           </tr>
         </thead>
         <tbody>
           @foreach ($pedidos as $pedido)
-            <tr class="clickable-row" data-href="{{action('PedidosController@detalhesPedidoCliente', [encrypt($pedido->pedido_id)])}}">
+            <tr class="clickable-row" data-href="{{action('PedidosController@detalhesPedidoAgente', [encrypt($pedido->pedido_id), encrypt($pedido->email_cliente)])}}">
               <th scope="row">{{\Carbon\Carbon::parse($pedido->pedido_id)->format('d/m/Y - H:i')}}</th>
+              <td>{{$pedido->email_cliente}}</td>
               <td>{{$pedido->preco}}</td>
               @if(strlen($pedido->descricao)<60)
                 <td>{{$pedido->descricao}}</td>
               @else
                 <td>{{substr($pedido->descricao, 0, 57).'...'}}</td>
               @endif
-              <td><a href="{{$pedido->url}}">Deal</a></td>
             </tr>
           @endforeach
         </tbody>

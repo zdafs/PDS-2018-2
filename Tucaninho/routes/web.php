@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Route::middleware('clienteAuth')->group(function(){
-  Route::get('/cliente/pedidos', 'PedidosController@listaPedidos');
+  Route::get('/cliente/pedidos', 'PedidosController@listaPedidosCliente');
 
   Route::get('/cliente/logout', 'ClienteController@logout');
 
@@ -28,7 +28,7 @@ Route::middleware('clienteAuth')->group(function(){
       return view('placeholder');
   });
 
-  Route::get('/cliente/pedidos/detalhes/{id}', 'PedidosController@detalhesPedido');
+  Route::get('/cliente/pedidos/detalhes/{id}', 'PedidosController@detalhesPedidoCliente');
 
   Route::get('/cliente/novo', function(){
       return view('cliente.content.content_novo_pedido');
@@ -36,6 +36,10 @@ Route::middleware('clienteAuth')->group(function(){
 
   Route::post('/cliente/novo', 'PedidosController@cadastraPedido');
 });
+
+Route::get('/agente/pedidos', 'PedidosController@listaPedidosAgente');
+
+Route::get('/cliente/pedidos/detalhes/{email}/{id}', 'PedidosController@detalhesPedidoAgente');
 
 Route::post('/login', 'ClienteAuth\ClienteLoginController@authenticate');
 
