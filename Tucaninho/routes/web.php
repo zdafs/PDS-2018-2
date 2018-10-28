@@ -41,6 +41,8 @@ Route::get('/agente/pedidos', 'PedidosController@listaPedidosAgente');
 
 Route::get('/cliente/pedidos/detalhes/{email}/{id}', 'PedidosController@detalhesPedidoAgente');
 
+Route::post('agente/novo', 'OfertaController@cadastraOferta');
+
 Route::post('/login', 'ClienteAuth\ClienteLoginController@authenticate');
 
 Route::post('/register', 'ClienteAuth\ClienteRegisterController@create');

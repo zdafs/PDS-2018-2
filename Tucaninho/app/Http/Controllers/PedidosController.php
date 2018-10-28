@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Pedido;
+use App\Oferta;
 use Carbon\Carbon;
 
 class PedidosController extends Controller {
@@ -40,7 +41,12 @@ class PedidosController extends Controller {
     public function detalhesPedidoAgente($id, $email){
         $match = ['pedido_id' => decrypt($id), 'email_cliente' => decrypt($email)];
         $pedido = Pedido::where($match)->get();
-
+        /*
+        $match['email_agente'] = $user->email_agente;
+        $oferta = Oferta::where($match)->first();
+        if($oferta!=null)
+            return view('agente.content.content_detalhes_pedidos')->with(['pedido' => $pedido[0], 'oferta' => $oferta]);
+        */
         return view('agente.content.content_detalhes_pedidos')->with('pedido', $pedido[0]);
     }
 }

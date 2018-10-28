@@ -45,11 +45,17 @@
 
        $(function() {
            $('#cancelar_oferta').click(function() {
-                $("[name='preco']").val("");
-                $("[name='precoFinal']").val("");
-                $("[name='detalhes']").val("");
+                $("#preco").val("");
+                $("#disabledPreco").val("");
+                $("#descricao").val("");
                 $('#oferta').collapse("hide");
                 $('#realizar_oferta').show("slow");
+            });
+        });
+
+       $(function() {
+           $('#preco').change(function() {
+                $("#disabledPreco").val((parseFloat($(this).val())*1.1).toFixed(2));
             });
         });
     </script>
@@ -97,15 +103,16 @@
 
                             <!-- formulário de oferta -->
                             <form method="post" action="contact.php" role="form">
+                                @csrf
+
                                 <div class="controls">
 
                                     <!-- campo -->
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="form_name">O preço da sua oferta:</label>
-                                                <input id="form_name" type="text" name="name" class="form-control" placeholder="Ex.: R$200,00 *" required="required" data-error="Firstname is required.">
-                                                <div class="help-block with-errors"></div>
+                                                <label for="preco">O preço da sua oferta:</label>
+                                                <input id="preco" type="number" min="1" step="0.01" class="form-control" placeholder="Ex.: R$200,00 *" required="required" value="">
                                             </div>
                                         </div>
                                     </div>
@@ -114,9 +121,8 @@
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="form_lastname">Preço final a ser pago, calculado a partir da taxa de serviço do Tucaninho:</label>
-                                                <input class="form-control" id="disabledInput" type="text" value="R$220,00" disabled>
-                                                <div class="help-block with-errors"></div>
+                                                <label for="disabledPreco">Preço final a ser pago, calculado a partir da taxa de serviço do Tucaninho:</label>
+                                                <input class="form-control"  id="disabledPreco" type="text" value="" name="preco" disabled>
                                             </div>
                                         </div>
                                     </div>
@@ -125,14 +131,15 @@
                                      <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label for="form_message">Descreva os detalhes da sua oferta:</label>
-                                                <textarea id="form_message" name="message" class="form-control" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente dicta fugit fugiat hic aliquam itaque facere, soluta. *" rows="4" required="required" data-error="Please, leave us a message."></textarea>
-                                                <div class="help-block with-errors"></div>
+                                                <label for="descricao">Descreva os detalhes da sua oferta:</label>
+                                                <textarea id="descricao" name="descricao" class="form-control" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente dicta fugit fugiat hic aliquam itaque facere, soluta. *" rows="4" required="required" data-error="Nos deixe uma mensagem." maxlength="1000"></textarea>
                                             </div>
                                         </div>
                                     </div>
 
                                 </div>
+                                <input type="hidden" name="email_cliente" value="{{$pedido->email_cliente}}">
+                                <input type="hidden" name="pedido_id" value="{{$pedido->pedido_id}}">
                             </form>
 
 
