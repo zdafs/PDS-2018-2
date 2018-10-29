@@ -12,9 +12,11 @@ class AdicionaPrecoPedidos extends Migration
      * @return void
      */
     public function up() {
-      Schema::table('pedidos', function($table){
-        $table->decimal('preco', 8, 2);
-      });
+        if(!Schema::hasColumn('pedidos', 'preco')){
+              Schema::table('pedidos', function($table){
+                $table->decimal('preco', 8, 2);
+              });
+        }
     }
 
     /**
@@ -23,8 +25,10 @@ class AdicionaPrecoPedidos extends Migration
      * @return void
      */
     public function down() {
-      Schema::table('pedidos', function($table){
-        $table->dropColumn('preco');
-      });
+        if(Schema::hasColumn('pedidos', 'preco')){
+              Schema::table('pedidos', function($table){
+                $table->dropColumn('preco');
+              });
+        }
     }
 }
