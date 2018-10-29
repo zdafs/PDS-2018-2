@@ -226,10 +226,7 @@
           <div class="col-md-4">
             <ul class="list-inline quicklinks">
               <li class="list-inline-item">
-                <a href="#" onclick="modalAgenteFunction()">Login do Agente</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">Terms of Use</a>
+                <a href="#" onclick="modalAgenteFunction()" id="loginAgenteBtn">Login do Agente</a>
               </li>
             </ul>
           </div>
