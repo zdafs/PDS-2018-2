@@ -37,12 +37,20 @@ Route::middleware('clienteAuth')->group(function(){
   Route::post('/cliente/novo', 'PedidosController@cadastraPedido');
 });
 
-Route::get('/agente/pedidos', 'PedidosController@listaPedidosAgente');
+Route::middleware('agenteAuth')->group(function(){
+    Route::get('/agente/pedidos', 'PedidosController@listaPedidosAgente');
 
-Route::get('/cliente/pedidos/detalhes/{email}/{id}', 'PedidosController@detalhesPedidoAgente');
+    Route::get('/cliente/pedidos/detalhes/{email}/{id}', 'PedidosController@detalhesPedidoAgente');
 
-Route::post('agente/novo', 'OfertaController@cadastraOferta');
+    Route::post('agente/novo', 'OfertaController@cadastraOferta');
 
-Route::post('/login', 'ClienteAuth\ClienteLoginController@authenticate');
+    Route::get('/agente/logout', 'AgenteController@logout');
+});
 
-Route::post('/register', 'ClienteAuth\ClienteRegisterController@create');
+Route::post('/cliente/login', 'ClienteAuth\ClienteLoginController@authenticate');
+
+Route::post('/cliente/register', 'ClienteAuth\ClienteRegisterController@create');
+
+Route::post('/agente/login', 'AgenteAuth\AgenteLoginController@authenticate');
+
+Route::post('/agente/register', 'AgenteAuth\AgenteRegisterController@create');

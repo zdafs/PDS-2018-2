@@ -9,7 +9,7 @@
             </div>
             <div class="modal-body">
                 <div id="id_loginAgentdiv">
-                    <form class="form-horizontal" id="formLoginAgente" action="{{action('ClienteAuth\ClienteLoginController@authenticate')}}" method="post">
+                    <form class="form-horizontal" id="formLoginAgente" action="{{action('AgenteAuth\AgenteLoginController@authenticate')}}" method="post">
                         @csrf
                         <div class="form-group">
                             <div class="col-xs-12 col-sm-12 form-control-static">
@@ -25,7 +25,7 @@
                             <button type="submit" class="btn btn-default" id="entrar">Entrar</button>
                         </div>
                     </form>
-                    <form class="form-horizontal" id="formCadastroAgente" method="post" action="{{action('ClienteAuth\ClienteRegisterController@create')}}">
+                    <form class="form-horizontal" id="formCadastroAgente" method="post" action="{{action('AgenteAuth\AgenteRegisterController@create')}}">
                         @csrf
                         <div class="form-group">
                             <div class="col-xs-12 col-sm-12 form-control-static">

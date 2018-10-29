@@ -15,7 +15,7 @@
 @section('sidebar')
   <li class="sidebar-brand">
       <a style="{pointer-events: none;}">
-          Bem Vindo, Blablabla
+          Bem Vindo, {{\Auth::guard('agente')->user()->nome_agente}}
       </a>
   </li>
   <li>
@@ -28,7 +28,7 @@
       <a href="/cliente/config">Configurações</a>
   </li>-->
   <li>
-      <a href="/">Logout</a>
+      <a href="{{action('AgenteController@logout')}}">Logout</a>
   </li>
 @endsection
 
