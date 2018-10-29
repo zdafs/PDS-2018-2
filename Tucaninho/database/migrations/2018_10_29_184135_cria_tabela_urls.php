@@ -27,7 +27,7 @@ class CriaTabelaUrls extends Migration{
                     ->references(['email_cliente', 'pedido_id'])->on('pedidos')
                     ->onDelete('cascade')->onUpdate('cascade');
 
-                $table->primary(['email_cliente', 'pedido_id']);
+                $table->primary(['email_cliente', 'pedido_id', 'url']);
             });
         }
     }
@@ -38,12 +38,6 @@ class CriaTabelaUrls extends Migration{
      * @return void
      */
     public function down(){
-        if(!Schema::hasColumn('pedidos', 'url')){
-            Schema::table('pedidos', function($table){
-                $table->string('url', 200);
-            });
-        }
-
         Schema::dropIfExists('url_pedido');
     }
 }

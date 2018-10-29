@@ -33,12 +33,9 @@
   <div class="card-body">
     <h3 class="card-title">Detalhes do Pedido</h3>
     <h4>R${{ $pedido->preco }}</h4>
-    <!--
-        paracada(link in links)
-            <p class="card-text"><b>URL:</b> <a href=" $link->url "> $link->url </a></p>
-        fimparacada
-    -->
-    <p class="card-text"><b>URL:</b> <a href="{{ $pedido->url }}">{{ $pedido->url }}</a></p>
+    @foreach($links as $link)
+        <p class="card-text"><b>URL:</b> <a href="{{ $link->url }}">{{ $link->url }}</a></p>
+    @endforeach
     <div class="row">
         <p class="col-md-3 card-text"><b>Tipo da viagem:</b> {{ $viagem }}</p>
         <p class="col-md-3 card-text"><b>Classe:</b> {{ $passagem }}</p>

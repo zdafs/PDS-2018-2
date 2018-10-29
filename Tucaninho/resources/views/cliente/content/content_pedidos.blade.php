@@ -26,7 +26,6 @@
             <th scope="col">Data</th>
             <th scope="col">Preço</th>
             <th scope="col">Descrição</th>
-            <th scope="col">Link</th>
           </tr>
         </thead>
         <tbody>
@@ -39,7 +38,6 @@
               @else
                 <td>{{substr($pedido->descricao, 0, 57).'...'}}</td>
               @endif
-              <td><a href="{{$pedido->url}}">Deal</a></td>
             </tr>
           @endforeach
         </tbody>

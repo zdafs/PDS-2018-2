@@ -15,7 +15,7 @@
 
       <div class="col-md-12">
 
-        @include('components.info_pedido', ['pedido' => $pedido])
+        @include('components.info_pedido', ['pedido' => $pedido, 'links' => $links])
         <!-- /.card -->
 
         <!--<div class="card card-outline-secondary my-4">

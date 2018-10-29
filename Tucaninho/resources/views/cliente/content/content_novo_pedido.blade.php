@@ -91,7 +91,7 @@
                                                     <div data-role="dynamic-fields" id="links">
                                                         <div class="form-inline">
                                                             <div class="form-group">
-                                                                <input type="text" name="link0" class="form-control" placeholder="Link..." required="required">
+                                                                <input type="url" name="link0" class="form-control" placeholder="Link..." required="required">
                                                             </div>
                                                             <button class="btn btn-primary" data-role="add">
                                                                 <i class="fa fa-plus"></i>

@@ -41,7 +41,7 @@
 
       <div class="col-md-12">
 
-        @include('components.info_pedido', ['pedido' => $pedido])
+        @include('components.info_pedido', ['pedido' => $pedido, 'links' => $links])
 
         <div class="row">
                 <div class="col-xl-12 py-5">
