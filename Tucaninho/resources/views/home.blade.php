@@ -84,7 +84,49 @@
             $("#formSenha").show();
             $("#login").show();
         });
+    }
 
+    function modalAgenteFunction(){
+        $("#modalAgenteLogin").modal('show');
+
+        $("#closeBtnAgente").click(function(){
+            $(".modal").hide();
+            $("#formLoginAgente").show();
+            $("#esqSenhaAgente").show();
+            $("#cadastroAgente").show();
+            $("#facebookIcon").show();
+            $("#formCadastroAgente").hide();
+            $("#formSenhaAgente").hide();
+            $("#loginAgente").hide();
+
+        });
+
+        $("#cadastroAgente").click(function(){
+            $("#formLoginAgente").hide();
+            $("#esqSenhaAgente").hide();
+            $("#cadastroAgente").hide();
+            $("#formCadastroAgente").show();
+            $("#loginAgente").show();
+        });
+
+        $("#loginAgente").click(function(){
+            $("#formLoginAgente").show();
+            $("#esqSenhaAgente").show();
+            $("#cadastroAgente").show();
+            $("#facebookIcon").show();
+            $("#formCadastroAgente").hide();
+            $("#formSenhaAgente").hide();
+            $("#loginAgente").hide();
+        });
+
+        $("#esqSenhaAgente").click(function(){
+            $("#formLoginAgente").hide();
+            $("#esqSenhaAgente").hide();
+            $("#cadastroAgente").hide();
+            $("#facebookIcon").hide();
+            $("#formSenhaAgente").show();
+            $("#loginAgente").show();
+        });
     }
     </script>
 
@@ -184,7 +226,7 @@
           <div class="col-md-4">
             <ul class="list-inline quicklinks">
               <li class="list-inline-item">
-                <a href="#">Privacy Policy</a>
+                <a href="#" onclick="modalAgenteFunction()">Login do Agente</a>
               </li>
               <li class="list-inline-item">
                 <a href="#">Terms of Use</a>
@@ -196,6 +238,7 @@
     </footer>
 
     @include('components.modal')
+    @include('components.modalAgent')
 
     <!-- Bootstrap core JavaScript -->
     <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>

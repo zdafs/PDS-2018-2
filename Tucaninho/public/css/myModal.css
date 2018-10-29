@@ -119,3 +119,69 @@
   background-color: limegreen;
 }
 
+#modalAgenteId {
+    background-color: #343131;
+    border: 2px solid gold;
+}
+
+#modalAgenteTitle {
+    color: gold;
+}
+
+#esqSenhaAgente {
+  color: deepskyblue;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: white;
+  border-radius: 10px;
+}
+
+#esqSenhaAgente:hover,
+#esqSenhaAgente:focus {
+  color: blue;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: skyblue;
+}
+
+#cadastroAgente {
+  color: goldenrod;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: white;
+  border-radius: 10px;
+}
+
+#cadastroAgente:hover,
+#cadastroAgente:focus {
+  color: gold;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: goldenrod;
+}
+
+#loginAgente {
+  display: none;
+  color: goldenrod;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: white;
+  border-radius: 10px;
+}
+
+#loginAgente:hover,
+#loginAgente:focus {
+  color: gold;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: goldenrod;
+}
+
+#formCadastroAgente {
+  display: none;
+}
+
+#formSenhaAgente {
+  display: none;
+}
+
