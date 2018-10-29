@@ -16,6 +16,35 @@
         function somaQnt(){
             $("#disabledInput").val(parseInt($("#qnt_adultos option:selected").val()) + parseInt($("#qnt_criancas option:selected").val()) + parseInt($("#qnt_bebes option:selected").val()));
         }
+
+        $(function() {
+        // Remove button click
+                $(document).on(
+                    'click',
+                    '[data-role="dynamic-fields"] > .form-inline [data-role="remove"]',
+                    function(e) {
+                        e.preventDefault();
+                        $(this).closest('.form-inline').remove();
+                    }
+                );
+                // Add button click
+                $(document).on(
+                    'click',
+                    '[data-role="dynamic-fields"] > .form-inline [data-role="add"]',
+                    function(e) {
+                        e.preventDefault();
+                        var container = $(this).closest('[data-role="dynamic-fields"]');
+                        new_field_group = container.children().filter('.form-inline:first-child').clone();
+                        new_field_group.find('input').each(function(){
+                            $(this).val('');
+                        });
+                        let num = parseInt(new_field_group.find('input').attr('name').slice(4))+1;
+                        new_field_group.find('input').attr('name', 'link'+num);
+                        new_field_group.find('button').attr('class', 'btn btn-danger').attr('data-role', 'remove').find('i').attr('class', 'fa fa-minus');
+                        container.prepend(new_field_group);
+                    }
+                );
+            });
   </script>
 @endsection
 
@@ -52,14 +81,26 @@
                                   </div>
 
                                   <div class="row">
-                                      <div class="col-md-8">
-                                          <div class="form-group">
-                                              <label for="limk">Link do pacote encontrado:</label>
-                                              <input id="link" type="url" name="link" class="form-control" placeholder="URL da imagem ou pedido *" required="required" data-error="A URL é obrigatória.">
-                                              <div class="help-block with-errors"></div>
-                                          </div>
-                                      </div>
-                                  </div>
+                                             <div class="col-md-8">
+                                                <label for="links">Insira o(s) link(s) relacionados à sua viagem (hotel, passagem, etc):</label>
+                                             </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <div data-role="dynamic-fields" id="links">
+                                                        <div class="form-inline">
+                                                            <div class="form-group">
+                                                                <input type="text" name="link0" class="form-control" placeholder="Link..." required="required">
+                                                            </div>
+                                                            <button class="btn btn-primary" data-role="add">
+                                                                <i class="fa fa-plus"></i>
+                                                            </button>
+                                                        </div>  <!-- /div.form-inline -->
+                                                    </div>  <!-- /div[data-role="dynamic-fields"] -->
+                                                </div>
+                                            </div>
+                                        </div>
 
                                    <div class="row">
                                       <div class="col-md-12">
