@@ -62,7 +62,7 @@
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="preco">O preço da sua oferta:</label>
-                                                    <input id="preco" type="number" min="1" step="0.01" class="form-control" placeholder="Ex.: R$200,00 *" required="required" value="">
+                                                    <input id="preco" type="number" min="1" step="0.01" class="form-control" placeholder="Ex.: R$200,00 *" required="required">
                                                 </div>
                                             </div>
                                         </div>
@@ -72,7 +72,7 @@
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="disabledPreco">Preço final a ser pago, calculado a partir da taxa de serviço do Tucaninho:</label>
-                                                    <input class="form-control"  id="disabledPreco" type="text" value="" name="preco" disabled>
+                                                    <input class="form-control"  id="disabledPreco" type="text" name="preco" readonly>
                                                 </div>
                                             </div>
                                         </div>
@@ -90,12 +90,12 @@
                                     </div>
                                     <input type="hidden" name="email_cliente" value="{{$pedido->email_cliente}}">
                                     <input type="hidden" name="pedido_id" value="{{$pedido->pedido_id}}">
+
+                                    <button type="submit" id="submeter_oferta" class="btn btn-outline-success">
+                                        Submeter
+                                    </button>
                                 </form>
 
-
-                                <button type="button" id="submeter_oferta" class="btn btn-outline-success">
-                                    Submeter
-                                </button>
                                 <button type="button" id="cancelar_oferta" class="btn btn-outline-danger">
                                     Cancelar
                                 </button>
@@ -110,7 +110,14 @@
                     </div>
                 </div>
             @else
-
+                <div class="card card-outline-secondary my-4">
+                    <div class="card-header">
+                        Oferta
+                    </div>
+                    <div class="card-body">
+                        @include('components.info_oferta', ['oferta' => $oferta, 'displayButton' => false])
+                    </div>
+                </div>
             @endif
 
       </div>

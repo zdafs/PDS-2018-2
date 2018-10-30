@@ -15,16 +15,18 @@
 
                 @include('components.info_pedido', ['pedido' => $pedido, 'links' => $links])
 
-                <div class="card card-outline-secondary my-4">
-                    <div class="card-header">
-                        Ofertas
+                @if(count($ofertas)>0)
+                    <div class="card card-outline-secondary my-4">
+                        <div class="card-header">
+                            Ofertas
+                        </div>
+                        <div class="card-body">
+                            @foreach($ofertas as $oferta)
+                                @include('components.info_oferta', ['oferta' => $oferta, 'displayButton' => true])
+                            @endforeach
+                        </div>
                     </div>
-                    <div class="card-body">
-                        @foreach($ofertas as $oferta)
-                            @include('components.info_oferta', ['oferta' => $oferta])
-                        @endforeach
-                    </div>
-                </div>
+                @endif
 
             </div>
 
