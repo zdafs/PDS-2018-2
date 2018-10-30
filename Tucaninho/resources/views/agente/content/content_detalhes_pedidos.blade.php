@@ -43,70 +43,75 @@
 
         @include('components.info_pedido', ['pedido' => $pedido, 'links' => $links])
 
-        <div class="row">
-                <div class="col-xl-12 py-5">
-                    <div class="card collapse multi-collapse" id="oferta">
-                        <div class="card-body" id="contact-form">
-                            <h3 class="card-title">Realizar Oferta</h3>
 
-                            <!-- formulário de oferta -->
-                            <form method="post" action="contact.php" role="form">
-                                @csrf
+        @if($oferta==null)
+            <div class="row">
+                    <div class="col-xl-12 py-5">
+                        <div class="card collapse multi-collapse" id="oferta">
+                            <div class="card-body" id="contact-form">
+                                <h3 class="card-title">Realizar Oferta</h3>
 
-                                <div class="controls">
+                                <!-- formulário de oferta -->
+                                <form method="post" action="{{action('OfertaController@cadastraOferta')}}" role="form">
+                                    @csrf
 
-                                    <!-- campo -->
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label for="preco">O preço da sua oferta:</label>
-                                                <input id="preco" type="number" min="1" step="0.01" class="form-control" placeholder="Ex.: R$200,00 *" required="required" value="">
+                                    <div class="controls">
+
+                                        <!-- campo -->
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="preco">O preço da sua oferta:</label>
+                                                    <input id="preco" type="number" min="1" step="0.01" class="form-control" placeholder="Ex.: R$200,00 *" required="required" value="">
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <!-- campo -->
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label for="disabledPreco">Preço final a ser pago, calculado a partir da taxa de serviço do Tucaninho:</label>
-                                                <input class="form-control"  id="disabledPreco" type="text" value="" name="preco" disabled>
+                                        <!-- campo -->
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="disabledPreco">Preço final a ser pago, calculado a partir da taxa de serviço do Tucaninho:</label>
+                                                    <input class="form-control"  id="disabledPreco" type="text" value="" name="preco" disabled>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <!-- campo -->
-                                     <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label for="descricao">Descreva os detalhes da sua oferta:</label>
-                                                <textarea id="descricao" name="descricao" class="form-control" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente dicta fugit fugiat hic aliquam itaque facere, soluta. *" rows="4" required="required" data-error="Nos deixe uma mensagem." maxlength="1000"></textarea>
+                                        <!-- campo -->
+                                         <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label for="descricao">Descreva os detalhes da sua oferta:</label>
+                                                    <textarea id="descricao" name="descricao" class="form-control" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente dicta fugit fugiat hic aliquam itaque facere, soluta. *" rows="4" required="required" data-error="Nos deixe uma mensagem." maxlength="1000"></textarea>
+                                                </div>
                                             </div>
                                         </div>
+
                                     </div>
-
-                                </div>
-                                <input type="hidden" name="email_cliente" value="{{$pedido->email_cliente}}">
-                                <input type="hidden" name="pedido_id" value="{{$pedido->pedido_id}}">
-                            </form>
+                                    <input type="hidden" name="email_cliente" value="{{$pedido->email_cliente}}">
+                                    <input type="hidden" name="pedido_id" value="{{$pedido->pedido_id}}">
+                                </form>
 
 
-                            <button type="button" id="submeter_oferta" class="btn btn-outline-success">
-                                Submeter
-                            </button>
-                            <button type="button" id="cancelar_oferta" class="btn btn-outline-danger">
-                                Cancelar
-                            </button>
-                            <!-- ./formulário de oferta -->
+                                <button type="button" id="submeter_oferta" class="btn btn-outline-success">
+                                    Submeter
+                                </button>
+                                <button type="button" id="cancelar_oferta" class="btn btn-outline-danger">
+                                    Cancelar
+                                </button>
+                                <!-- ./formulário de oferta -->
+                            </div>
                         </div>
+
+                        <button type="button" class="btn btn-warning btn-lg btn-block" id="realizar_oferta" data-toggle="collapse" data-target="#oferta" aria-expanded="false" aria-controls="oferta">
+                            Fazer uma oferta
+                        </button>
+
                     </div>
-
-                    <button type="button" class="btn btn-warning btn-lg btn-block" id="realizar_oferta" data-toggle="collapse" data-target="#oferta" aria-expanded="false" aria-controls="oferta">
-                        Fazer uma oferta
-                    </button>
-
                 </div>
-            </div>
+            @else
+
+            @endif
 
       </div>
       <!-- /.col-lg-9 -->
