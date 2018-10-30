@@ -48,8 +48,9 @@ class PedidosController extends Controller {
         $match = ['pedido_id' => decrypt($id), 'email_cliente' => $user->email_cliente];
         $pedido = Pedido::where($match)->first();
         $links = Url::where($match)->get();
+        $ofertas = Oferta::where($match)->get();
 
-        return view('cliente.content.content_detalhes_pedidos')->with(['pedido' => $pedido, 'links' => $links]);
+        return view('cliente.content.content_detalhes_pedidos')->with(['pedido' => $pedido, 'links' => $links, 'ofertas' => $ofertas]);
     }
 
     public function detalhesPedidoAgente($id, $email){
