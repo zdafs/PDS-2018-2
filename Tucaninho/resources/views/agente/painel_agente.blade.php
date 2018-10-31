@@ -1,3 +1,8 @@
+<?php
+    $array_nome_agente = explode(" ", \Auth::guard('agente')->user()->nome_agente, 2);
+    $primeiro_nome_agente = $array_nome_agente[0]
+?>
+
 @extends('layout_geral')
 
 @section('title')
@@ -15,7 +20,7 @@
 @section('sidebar')
   <li class="sidebar-brand">
       <a style="{pointer-events: none;}">
-          Bem Vindo, {{\Auth::guard('agente')->user()->nome_agente}}
+          Bem Vindo, {{$primeiro_nome_agente}}
       </a>
   </li>
   <li>

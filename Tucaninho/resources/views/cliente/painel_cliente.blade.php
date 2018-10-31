@@ -1,3 +1,8 @@
+<?php
+    $array_nome_cliente = explode(" ", \Auth::guard('cliente')->user()->nome_cliente, 2);
+    $primeiro_nome_cliente = $array_nome_cliente[0]
+?>
+
 @extends('layout_geral')
 
 @section('title')
@@ -15,7 +20,7 @@
 @section('sidebar')
   <li class="sidebar-brand">
       <a style="{pointer-events: none;}">
-          Bem Vindo, {{\Auth::guard('cliente')->user()->nome_cliente}}
+          Bem Vindo, {{$primeiro_nome_cliente}}
       </a>
   </li>
   <li>
