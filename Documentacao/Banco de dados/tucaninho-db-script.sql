@@ -13,7 +13,6 @@ create table Cliente (
 create table Pedidos (
 	pedido_id timestamp,
 	email_cliente varchar(100) references Cliente(email_cliente) ON DELETE CASCADE ON UPDATE CASCADE,
-	url varchar(200) not null,
 	descricao text not null,
 	qnt_adultos smallint not null,
 	qnt_criancas smallint not null,
@@ -33,4 +32,12 @@ create table Oferta (
 	descricao text not null,
 	foreign key (email_cliente, pedido_id) references Pedidos(email_cliente, pedido_id) ON DELETE CASCADE ON UPDATE CASCADE,
 	primary key(email_cliente, pedido_id, email_agente)
+);
+
+create table url_pedido(
+  url varchar(200) not null,
+  pedido_id timestamp not null,
+	email_cliente varchar(100) not null,
+	foreign key (email_cliente, pedido_id) references Pedidos(email_cliente, pedido_id) ON DELETE CASCADE ON UPDATE CASCADE,
+  primary key(pedido_id, email_cliente, url)
 );
